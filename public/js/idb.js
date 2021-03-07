@@ -14,10 +14,8 @@ request.onsuccess = function(event) {
     // when db is successfully created with its object store (from onupgradedneeded event above) or simply established a connection, save reference to db in global variable
     db = event.target.result;
     if (navigator.onLine) {
-    
-      populateTotal();
-      populateTable();
-      populateChart();
+        saveRecord();
+
     }
   };
   
@@ -35,4 +33,5 @@ function saveRecord(record) {
   
     // add record to your store with add method
     budgetObjectStore.add(record);
-  }
+};
+
